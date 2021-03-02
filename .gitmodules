@@ -1,0 +1,9 @@
+[submodule "ECRad_core"]
+	path = ECRad_core
+	url = git@github.com:AreWeDreaming/ECRad_core.git
+[submodule "ECRad_PyLib"]
+	path = ECRad_PyLib
+	url = git@github.com:AreWeDreaming/ECRad_PyLib.git
+[submodule "ECRad_GUI"]
+	path = ECRad_GUI
+	url = git@github.com:AreWeDreaming/ECRad_GUI.git
