@@ -9,6 +9,6 @@ git pull --recurse-submodules origin master
 
 Please execute `build.sh` for bash or `build.tcsh` for tcsh in the `ECRad_core` subfolder.
 ## Running ECRad
-A detailed documentation is still a work in progress. To run ECRad please execute `.launch_ECRad_GUI.sh` for bash or `.launch_ECRad_GUI.tcsh` for tcsh to start the GUI.
+A detailed documentation is still a work in progress. To run ECRad please execute navigate into the ECRad_GUI folder and then run either`.launch_ECRad_GUI.sh` for `bash` or `.launch_ECRad_GUI.tcsh` for `tcsh` to start the GUI.
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
