@@ -19,6 +19,7 @@ ECRad is distributed through `conda/mamba`. Please check [these instructions](ht
 It is recommended to install through `mamba` over `conda` because `mamba` has much improved environment solving. ECRad is available for `python 3.10` and `python 3.11`.
 
 With `mamba` installing `ECRad` is as simple as:
+
 For `python 3.10`
 ```
 mamba create -n ECRad python=3.10 ecrad_gui
