@@ -6,6 +6,10 @@ Toolkit for the forward modeling of electron cyclotron emission measurements. Co
       1. [IMAS support](#imas-support)
    2. [Using ECRad](#using-ecrad)
       1. [Starting the GUI](#starting-the-gui)
+      2. [Loading data](#loading-data)
+      3. [Configuring ECRad](#configuring-ecrad)
+      4. [Running ECRad](#running-ecrad)
+      5. [Inspecting the outputs](#inspecting-the-outputs)
    3. [License](#license)
 
 
