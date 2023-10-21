@@ -90,8 +90,8 @@ Once the scenario data has been loaded, the diagnostic data has to be loaded by 
 Once both plasma scenario and launch configuration is set you need to move on to the `ECRad` configuration tab.
 
 ### Configuring ECRad
-Please refer to the [CPC article for details on the options]((https://www.sciencedirect.com/science/article/abs/pii/S0010465520300291)). 
-It is not 
+Please refer to the [CPC article for details on the options](https://www.sciencedirect.com/science/article/abs/pii/S0010465520300291). 
+
 In principle there is only few options you will need to touch:
 - `Working dir` This is where any results will be stored
 - `Scratch dir` Set this to the same folder as `Working dir`. It is intended to be used in conjunction with `SLURM` submission but this feature is not maintained at the moment.
