@@ -101,7 +101,7 @@ In principle there is only few options you will need to touch:
 - Neither `walltime` nor `memory` matter if batch submission is not used.
 
 ### Running ECRad
-Once everything is set simply press the `Run ECRad` button up top and ECRad should start. Note that the output from ECRad is not parsed to the log box due to technical limitations, and the ECRad output will appear in the shell you used to start the GUI.
+Once everything is set, simply press the `Start ECRad` button up top and ECRad should start. Note that the output from ECRad is not parsed to the log box due to technical limitations, and the ECRad output will appear in the shell you used to start the GUI.
 
 ### Inspecting the outputs
 The GUI will save all outputs to a `NetCDF` file for further processing. You can inspect the entire content of this file in the `Misc. Plot` tab. 
