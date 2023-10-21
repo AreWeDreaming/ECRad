@@ -106,7 +106,7 @@ Once everything is set, simply press the `Start ECRad` button up top and ECRad s
 ### Inspecting the outputs
 The GUI will save all outputs to a `NetCDF` file for further processing. You can inspect the entire content of this file in the `Misc. Plot` tab. 
 
-To plot something you first select what should be plotted on the `y` axis of the plot. For this first you select a group of quantities:
+To plot something you first select what should be plotted on the `y` axis of the plot. For this first you select a `y-group`:
 - `Trad` refers to quantities that are line integrated such as the radiation Temperatures or the optical depth.
 - `resonance` This field is usually used for `x` axis quantities. It includes cold/warm resonances in various coordinates
 - `ray` These are quantities that are used somewhere in the calculation of `Trad`. Of particular interest are `R` and `z` for plotting the line of sight.
