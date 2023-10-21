@@ -95,7 +95,7 @@ Please refer to the [CPC article for details on the options](https://www.science
 In principle there is only few options you will need to touch:
 - `Working dir` This is where any results will be stored
 - `Scratch dir` Set this to the same folder as `Working dir`. It is intended to be used in conjunction with `SLURM` submission but this feature is not maintained at the moment.
-- For most cases you want `Extra output` is checked.
+- For most cases you want `Extra output` checked.
 - For most cases you want to check `Parallel` and uncheck `debug` and `Batch`
 - For number of cores please pick a number appropriate for your machine. It should be at most the number of physical number of cores.
 - Neither `walltime` nor `memory` matter if batch submission is not used.
