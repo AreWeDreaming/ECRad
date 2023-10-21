@@ -126,6 +126,7 @@ Once a `y group` has been selected the `x-group` and `y quantity` can be chosen.
 In addition it is also possible to plot some of the scenario information using the box `Add scenario quantity to plot`. It uses both y-axes and combines radiation and electron temperatures. So for the above selections it is possible to select 
 - `Te`
 - `ne`
+
 by clicking the corresponding fields while holding the shift key.
 
 For `R-z` plots it can be useful to select `rhop` from this box, which then shows the flux surfaces as contours. In this case it is worthwhile to also check the `Equal aspect ratio` box.
