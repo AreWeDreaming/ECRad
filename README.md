@@ -19,6 +19,10 @@ ECRad is distributed through `conda/mamba`. Please check [these instructions](ht
 It is recommended to install through `mamba` over `conda` because `mamba` has much improved environment solving. ECRad is available for `python 3.10` and `python 3.11`.
 
 With `mamba` installing `ECRad` is as simple as:
+For `python 3.8`
+```
+mamba create -n ECRad python=3.8 ecrad_gui
+```
 
 For `python 3.10`
 ```
@@ -34,7 +38,7 @@ conda activate ECRad
 ```
 
 ### IMAS support
-Even when installed through `mamba` `ECRad` can use a system `IMAS` installation. To do so load `IMAS` first then activate the `ECRad` `conda` environment. If the `IMAS` python library directory is in your `$PYTHONPATH` and you have matched the major version of `python` between the two environments (i.e. both use `python 3.10`) then it should work.
+Even when installed through `mamba` `ECRad` can use a system `IMAS` installation. To do so load `IMAS` first then activate the `ECRad` `conda` environment. If the `IMAS` python library directory is in your `$PYTHONPATH` and you have matched the major version of `python` between the two environments (i.e. both use `python 3.8`) then it should work.
 
 ## Using ECRad
 Unfortunately there is no detailed user-guide at the moment. Below there is a rough sketch of a typical workflow. Some information can also be found in [this article](https://www.sciencedirect.com/science/article/abs/pii/S0010465520300291). If you don't have access to it please contact me and I will send you a pre-print.
