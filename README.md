@@ -21,16 +21,16 @@ It is recommended to install through `mamba` over `conda` because `mamba` has mu
 With `mamba` installing `ECRad` is as simple as:
 For `python 3.8`
 ```
-mamba create -n ECRad python=3.8 ecrad_gui
+mamba create -n ECRad python=3.8 -c arewedreaming ecrad_gui
 ```
 
 For `python 3.10`
 ```
-mamba create -n ECRad python=3.10 ecrad_gui
+mamba create -n ECRad python=3.10 -c arewedreaming ecrad_gui
 ```
 For `python 3.11`
 ```
-mamba create -n ECRad python=3.11 ecrad_gui
+mamba create -n ECRad python=3.11 -c arewedreaming ecrad_gui
 ```
 and then activate the environment via:
 ```
