@@ -4,6 +4,8 @@ Toolkit for the forward modeling of electron cyclotron emission measurements. Co
 1. [ECRad](#ecrad)
    1. [Installation](#installation)
       1. [IMAS support](#imas-support)
+      2. [Development install](#development-install)
+      3. [Releasing](#releasing)
    2. [Using ECRad](#using-ecrad)
       1. [Starting the GUI](#starting-the-gui)
       2. [Loading data](#loading-data)
@@ -19,11 +21,6 @@ ECRad is distributed through `conda/mamba`. Please check [these instructions](ht
 It is recommended to install through `mamba` over `conda` because `mamba` has much improved environment solving. ECRad is available for `python 3.10` and `python 3.11`.
 
 With `mamba` installing `ECRad` is as simple as:
-For `python 3.8`
-```
-mamba create -n ECRad python=3.8 -c arewedreaming ecrad_gui
-```
-
 For `python 3.10`
 ```
 mamba create -n ECRad python=3.10 -c arewedreaming ecrad_gui
@@ -38,7 +35,44 @@ conda activate ECRad
 ```
 
 ### IMAS support
-Even when installed through `mamba` `ECRad` can use a system `IMAS` installation. To do so load `IMAS` first then activate the `ECRad` `conda` environment. If the `IMAS` python library directory is in your `$PYTHONPATH` and you have matched the major version of `python` between the two environments (i.e. both use `python 3.8`) then it should work.
+Even when installed through `mamba` `ECRad` can use a system `IMAS` installation. To do so load `IMAS` first then activate the `ECRad` `conda` environment. If the `IMAS` python library directory is in your `$PYTHONPATH` and you have matched the major version of `python` between the two environments (i.e. both use `python 3.11`) then it should work.
+
+### Development install
+Clone this repository with its submodules and create the development environment:
+```
+git clone --recurse-submodules git@github.com:AreWeDreaming/ECRad.git
+cd ECRad
+micromamba env create -f dev_environment.yaml
+micromamba activate ECRad
+```
+Build the Fortran core and install all three packages in editable mode:
+```
+cd ECRad_core
+make -C fitpack && make -C odepack
+make lib F2PY_wrapper OPEN_MP=True COMPILER=GNU F90=gfortran PREFIX=$CONDA_PREFIX
+pip install -e . --no-deps --no-build-isolation
+cd ../ECRad_PyLib && pip install -e . --no-deps --no-build-isolation
+cd ../ECRad_GUI && pip install -e . --no-deps --no-build-isolation
+```
+Python changes take effect immediately. After changing Fortran code rerun the `make` line, no reinstall is needed.
+Add `DEBUG=True` and/or drop `OPEN_MP=True` to build the other flavours of the core.
+
+### Releasing
+The conda recipes for all three packages live in `recipes/` of this repository, not in the submodules.
+Releases are built with `rattler-build` and uploaded to the `arewedreaming` channel.
+
+- Code change in a submodule: bump `__version__` in its `__init__.py`, commit, tag (e.g. `1.0.30`) and push.
+  Then set `version` in the matching `recipes/<package>/recipe.yaml`, reset `build.number` to `0`,
+  run `recipes/update_pins.sh` to pin the dependent recipes to the new version,
+  bump `build.number` of any dependent recipe whose pins changed but whose version did not,
+  update the submodule pointer and commit here.
+- Recipe-only change: edit the recipe, bump `build.number` and commit here. No new tag is needed.
+
+Build and upload in dependency order (`ecrad_core`, `ecrad_pylib`, `ecrad_gui`):
+```
+rattler-build build -r recipes/ecrad_core -c conda-forge -c arewedreaming
+rattler-build upload anaconda -o arewedreaming output/linux-64/ecrad_core-*.conda
+```
 
 ## Using ECRad
 Unfortunately there is no detailed user-guide at the moment. Below there is a rough sketch of a typical workflow. Some information can also be found in [this article](https://www.sciencedirect.com/science/article/abs/pii/S0010465520300291). If you don't have access to it please contact me and I will send you a pre-print.

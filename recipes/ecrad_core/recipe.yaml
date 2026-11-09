@@ -1,0 +1,29 @@
+context:
+  version: "1.0.31"
+
+package:
+  name: ecrad_core
+  version: ${{ version }}
+
+source:
+  git: https://github.com/AreWeDreaming/ECRad_core
+  tag: ${{ version }}
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - ${{ compiler('fortran') }}
+    - ${{ compiler('c') }}
+    - make
+  host:
+    - python
+    - numpy <=1.26
+    - openblas
+    - pip >=21.0
+    - setuptools >=57.4,<74 # numpy.distutils (f2py) needs distutils.msvccompiler
+  run:
+    - python
+    - numpy <=1.26
+    - openblas
